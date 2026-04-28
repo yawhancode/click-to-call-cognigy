@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Click To Call PoC</title>
+  </head>
+  <body>
+    <h1>Talk to our AI Assistant</h1>
+
+    <!-- Paste Cognigy code BELOW -->
+    <!-- ======================= -->
+
+  <script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
+<script>
+  addEventListener("load", () => {
+    if (window.initWebRTCWidget) {
+      window.initWebRTCWidget(
+        "https://endpoint-trial.cognigy.ai/3eb34ce90f6f64a611c79c272cc15d60de6fe05e3e1a87baeac290dcfe15fead"
+      );
+    }
+  });
+</script>
+
+    <!-- ======================= -->
+  </body>
+</html>
