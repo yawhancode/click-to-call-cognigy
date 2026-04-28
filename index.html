@@ -1,25 +1,96 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Click To Call PoC</title>
-  </head>
-  <body>
-    <h1>Talk to our AI Assistant</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Voice Assistant Demo</title>
 
-    <!-- Paste Cognigy code BELOW -->
-    <!-- ======================= -->
-
-  <script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
-<script>
-  addEventListener("load", () => {
-    if (window.initWebRTCWidget) {
-      window.initWebRTCWidget(
-        "https://endpoint-trial.cognigy.ai/3eb34ce90f6f64a611c79c272cc15d60de6fe05e3e1a87baeac290dcfe15fead"
-      );
+  <!-- Basic modern styling -->
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+      color: #1f2937;
     }
-  });
-</script>
 
-    <!-- ======================= -->
-  </body>
+    .container {
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    p.subtitle {
+      font-size: 18px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .info-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f0f7ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+    }
+
+    .info-box strong {
+      color: #1d4ed8;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>AI Voice Assistant</h1>
+
+    <p class="subtitle">
+      This is a live voice AI demo powered by <strong>Cognigy.AI</strong>.
+      Click the call button in the bottom corner to start speaking with the
+      assistant directly from your browser.
+    </p>
+
+    <div class="info-box">
+      <strong>How it works:</strong>
+      <ul>
+        <li>Click the 🎧 call button</li>
+        <li>Allow microphone access</li>
+        <li>Speak naturally to the AI assistant</li>
+      </ul>
+    </div>
+
+    <footer>
+      Demo environment · WebRTC · No phone number required
+    </footer>
+  </div>
+
+  <!-- Cognigy Click-to-Call Widget -->
+  <script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      window.initWebRTCWidget(
+        "https://endpoint-trial.cognigy.ai/3eb34ce90f6f64a611c79c272cc15d60de6fe05e3e1a87baeac290dcfe15fead",
+        {
+          position: "bottom-right",
+          showUI: true
+        }
+      );
+    });
+  </script>
+</body>
 </html>
